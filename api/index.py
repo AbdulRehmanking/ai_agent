@@ -20,6 +20,7 @@ from ddgs import DDGS
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
+print(f"DEBUG_CHECK groq_model='{GROQ_MODEL}'", flush=True)
 # Firebase service account key, provided as a base64-encoded JSON string.
 # (Base64 because most hosts, including Vercel, want env vars as one plain
 # line - a raw JSON blob with newlines/quotes is easy to mangle when pasting.)
@@ -28,7 +29,7 @@ FIREBASE_CREDENTIALS_B64 = os.environ.get("FIREBASE_CREDENTIALS_B64")
 # under a custom ID in the console (the console shows this as "Database <id>"
 # at the top of the Firestore page) - then set this env var to match.
 FIRESTORE_DATABASE_ID = os.environ.get("FIRESTORE_DATABASE_ID", "(default)")
-
+print(f"DEBUG_CHECK db_id='{FIRESTORE_DATABASE_ID}' len={len(FIRESTORE_DATABASE_ID)}", flush=True)
 # --- Efficiency knobs -------------------------------------------------------
 # These four control token spend directly. Lower = cheaper/faster, at some
 # cost to how much context the model has. Tune via env vars, no code changes.
