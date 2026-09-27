@@ -1,5 +1,7 @@
-flask==3.0.3
-groq==0.11.0
-firebase-admin==6.5.0
-ddgs==9.0.0
-python-dotenv==1.0.1
+Flask
+python-dotenv
+firebase-admin
+google-cloud-firestore
+groq>=0.13.0
+ddgs
+httpx<0.28
